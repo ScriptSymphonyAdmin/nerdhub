@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Nerd Hub</title>
+<meta name="description" content="A collection of fan-made and original tabletop campaigns, game worlds, apps, and screenplays.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=IM+Fell+English:ital@0;1&family=IM+Fell+English+SC&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f3e9d2;
+    --paper-deep:#ecdfc2;
+    --ink:#2c2316;
+    --ink-soft:#5a4a32;
+    --ink-faint:#8a7757;
+    --rule:#c9b890;
+    --seal:#8a2b1e;       /* wax-seal red — for original creations */
+    --link:#6b4a1e;
+    --link-hover:#8a2b1e;
+  }
+
+  *{box-sizing:border-box;}
+
+  html{scroll-behavior:smooth;}
+
+  body{
+    margin:0;
+    background-color:var(--paper);
+    /* layered warmth + subtle vignette so the page reads as a sheet of parchment */
+    background-image:
+      radial-gradient(120% 90% at 50% 0%, rgba(255,250,235,0.6) 0%, transparent 55%),
+      radial-gradient(140% 120% at 50% 100%, rgba(120,95,55,0.18) 0%, transparent 60%),
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
+    color:var(--ink);
+    font-family:'EB Garamond',Georgia,serif;
+    font-size:19px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    min-height:100vh;
+  }
+
+  .sheet{
+    max-width:740px;
+    margin:0 auto;
+    padding:72px 28px 96px;
+  }
+
+  /* ---------- Header ---------- */
+  header{
+    text-align:center;
+    margin-bottom:18px;
+  }
+  .title{
+    font-family:'IM Fell English SC','EB Garamond',serif;
+    font-weight:400;
+    font-size:clamp(2.8rem,9vw,4.4rem);
+    line-height:1.05;
+    letter-spacing:0.02em;
+    margin:0;
+    color:var(--ink);
+  }
+  .tagline{
+    font-family:'IM Fell English',serif;
+    font-style:italic;
+    color:var(--ink-soft);
+    font-size:1.15rem;
+    margin:14px auto 0;
+    max-width:46ch;
+  }
+  .crest{
+    width:46px;height:46px;margin:0 auto 22px;
+    display:block;color:var(--ink-soft);opacity:0.85;
+  }
+
+  .divider{
+    border:0;
+    height:1px;
+    background:linear-gradient(to right,transparent,var(--rule) 18%,var(--rule) 82%,transparent);
+    margin:40px 0;
+  }
+  .divider.short{
+    width:120px;margin:34px auto;
+  }
+
+  /* ---------- Sections ---------- */
+  section{margin-top:48px;}
+  .section-title{
+    font-family:'IM Fell English',serif;
+    font-weight:400;
+    font-size:0.92rem;
+    text-transform:uppercase;
+    letter-spacing:0.32em;
+    color:var(--ink-faint);
+    margin:0 0 26px;
+    text-align:center;
+  }
+
+  /* ---------- Entries ---------- */
+  .entry{
+    margin-bottom:34px;
+    padding-bottom:34px;
+    border-bottom:1px solid rgba(201,184,144,0.5);
+  }
+  .entry:last-child{border-bottom:0;margin-bottom:0;padding-bottom:0;}
+
+  .entry-head{
+    display:flex;
+    align-items:baseline;
+    flex-wrap:wrap;
+    gap:10px 14px;
+    margin-bottom:6px;
+  }
+  .entry-name{
+    font-family:'IM Fell English',serif;
+    font-size:1.62rem;
+    line-height:1.2;
+    margin:0;
+    color:var(--ink);
+  }
+  .kind{
+    font-family:'EB Garamond',serif;
+    font-style:italic;
+    font-size:0.95rem;
+    color:var(--ink-faint);
+  }
+  .tag{
+    display:inline-block;
+    font-family:'EB Garamond',serif;
+    font-size:0.72rem;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--seal);
+    border:1px solid var(--seal);
+    border-radius:2px;
+    padding:2px 8px;
+    transform:translateY(-2px);
+    white-space:nowrap;
+  }
+  .desc{
+    margin:0 0 14px;
+    color:var(--ink-soft);
+    max-width:62ch;
+  }
+
+  /* single link */
+  a.read{
+    display:inline-block;
+    font-family:'EB Garamond',serif;
+    font-size:1rem;
+    letter-spacing:0.06em;
+    color:var(--link);
+    text-decoration:none;
+    border-bottom:1px solid var(--rule);
+    padding-bottom:1px;
+    transition:color .18s ease,border-color .18s ease;
+  }
+  a.read::after{content:" \2192";opacity:.6;}
+  a.read:hover{color:var(--link-hover);border-color:var(--link-hover);}
+
+  /* volume rows */
+  .volumes{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px 10px;
+    margin-top:4px;
+  }
+  .volumes a{
+    font-family:'EB Garamond',serif;
+    font-size:0.92rem;
+    letter-spacing:0.04em;
+    color:var(--link);
+    text-decoration:none;
+    border:1px solid var(--rule);
+    border-radius:3px;
+    padding:5px 13px;
+    background:rgba(255,250,235,0.45);
+    transition:all .18s ease;
+    white-space:nowrap;
+  }
+  .volumes a:hover{
+    color:#fff;
+    background:var(--link-hover);
+    border-color:var(--link-hover);
+  }
+
+  /* ---------- Disclaimer ---------- */
+  footer{
+    margin-top:64px;
+  }
+  .disclaimer{
+    font-size:0.92rem;
+    line-height:1.7;
+    color:var(--ink-faint);
+    text-align:center;
+    max-width:60ch;
+    margin:0 auto;
+  }
+  .disclaimer strong{color:var(--ink-soft);font-weight:500;}
+  .colophon{
+    text-align:center;
+    margin-top:28px;
+    font-family:'IM Fell English',serif;
+    font-style:italic;
+    font-size:0.95rem;
+    color:var(--ink-faint);
+  }
+
+  /* ---------- Entrance animation ---------- */
+  @keyframes rise{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:none;}}
+  .reveal{opacity:0;animation:rise .7s ease forwards;}
+  @media (prefers-reduced-motion:reduce){.reveal{opacity:1;animation:none;}}
+
+  @media (max-width:520px){
+    body{font-size:18px;}
+    .sheet{padding:54px 20px 72px;}
+    .entry-name{font-size:1.4rem;}
+  }
+</style>
+</head>
+<body>
+  <main class="sheet">
+
+    <header>
+      <svg class="crest reveal" style="animation-delay:.05s" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M12 2l2.4 4.9 5.4.8-3.9 3.8.9 5.4L12 19.3 7.2 16.7l.9-5.4L4.2 7.5l5.4-.8z"/>
+        <circle cx="12" cy="12" r="11"/>
+      </svg>
+      <h1 class="title reveal" style="animation-delay:.1s">The Nerd Hub</h1>
+      <p class="tagline reveal" style="animation-delay:.2s">A workshop of campaigns, worlds, and odd creations &mdash; mostly built for the love of the games, films, and shows behind them.</p>
+    </header>
+
+    <hr class="divider short reveal" style="animation-delay:.3s">
+
+    <!-- ============ TABLETOP CAMPAIGNS ============ -->
+    <section class="reveal" style="animation-delay:.36s">
+      <h2 class="section-title">Tabletop Campaigns</h2>
+
+      <div class="entry">
+        <div class="entry-head">
+          <h3 class="entry-name">The Shackled City</h3>
+          <span class="kind">D&amp;D campaign, chronicled as a graphic novel</span>
+        </div>
+        <p class="desc">A complete Dungeons &amp; Dragons campaign run on virtual tabletops and rebuilt as a readable chronicle &mdash; cleaned-up screenshots and in-character dialogue edited together graphic-novel style across three volumes.</p>
+        <div class="volumes">
+          <a href="https://www.dropbox.com/scl/fi/vum3gji5th2slu919hy08/00_The-Shackled-City-Campaign_VOLUME-ONE.pdf?rlkey=ma528lttwhsh900bkmbxhvj0s&e=1&dl=01" target="_blank" rel="noopener">Volume One</a>
+          <a href="https://www.dropbox.com/scl/fi/ddib3vekemf5tlmgmo1qx/01_The-Shackled-City-Campaign_VOLUME-TWO.pdf?rlkey=llc5tygxljxh4wg3dn2m26eag&e=1&dl=01" target="_blank" rel="noopener">Volume Two</a>
+          <a href="https://www.dropbox.com/scl/fi/i4ml5rwg9pehs2as0c56s/02_The-Shackled-City-Campaign_VOLUME-THREE.pdf?rlkey=chmkocw480xtb654aa65cvg1g&e=1&dl=01" target="_blank" rel="noopener">Volume Three</a>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <h3 class="entry-name">Age of Worms</h3>
+          <span class="kind">D&amp;D campaign, chronicled as a graphic novel</span>
+        </div>
+        <p class="desc">The follow-up to <em>The Shackled City</em> &mdash; another epic D&amp;D adventure path run on virtual tabletops and chronicled across five volumes, carrying the saga onward to its grim conclusion.</p>
+        <div class="volumes">
+          <a href="https://www.dropbox.com/scl/fi/qeioa89lnkhng8wtfb1qw/02_Age-of-Worms_Volume-One.pdf?rlkey=avz69hhk8wwqxd1wuzpjly9q1&e=1&dl=01" target="_blank" rel="noopener">Volume One</a>
+          <a href="https://www.dropbox.com/scl/fi/dx2iu3l24luzpe7vaclhe/04_Age-of-Worms-Volume-Two.pdf?rlkey=n8pz81v3gdi3esap2xkd8sok6&e=1&dl=01" target="_blank" rel="noopener">Volume Two</a>
+          <a href="https://www.dropbox.com/scl/fi/d219q4e41xdszdgyd4y5u/04_Age-of-Worms-Volume-Three.pdf?rlkey=006bplthoewywtj27njq44kro&e=1&dl=01" target="_blank" rel="noopener">Volume Three</a>
+          <a href="https://www.dropbox.com/scl/fi/q8r2n7eym0m8xm8hd5pwt/05_Age-of-Worms-Volume-Four.pdf?rlkey=nr9selywkhxpya8nak0sils6m&e=1&dl=01" target="_blank" rel="noopener">Volume Four</a>
+          <a href="https://www.dropbox.com/scl/fi/gom42gpghj0de28z6mvep/06_Age-of-Worms-Volume-Five.pdf?rlkey=kh6b4srua6i9515lvk85eahcv&e=1&dl=01" target="_blank" rel="noopener">Volume Five</a>
+        </div>
+      </div>
+    </section>
+
+    <hr class="divider">
+
+    <!-- ============ GAME WORLDS & SYSTEMS ============ -->
+    <section>
+      <h2 class="section-title">Game Worlds &amp; Systems</h2>
+
+      <div class="entry">
+        <div class="entry-head">
+          <h3 class="entry-name">Pirates of Dark Water</h3>
+          <span class="kind">D&amp;D campaign setting</span>
+        </div>
+        <p class="desc">A Dungeons &amp; Dragons campaign world inspired by the cult animated series &mdash; a full setting for seafaring adventure across treacherous seas, lost treasures, and the creeping menace of the dark water.</p>
+        <a class="read" href="https://www.dropbox.com/scl/fi/32n92drmdd654h69n6d9q/PODW-07.21-609-pm.pdf?rlkey=zkrzeomrjm7bk1ue5qokmsctx&e=1&dl=0" target="_blank" rel="noopener">Open the setting</a>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <h3 class="entry-name">Willow</h3>
+          <span class="kind">campaign world on an original game system</span>
+          <span class="tag">Original System</span>
+        </div>
+        <p class="desc">A campaign world set in the realm of the film <em>Willow</em>, built on a brand-new ruleset of my own design &mdash; an original system created to capture the high-fantasy feel of the world, more than just a setting.</p>
+        <a class="read" href="https://www.dropbox.com/scl/fi/ae3bqifsfsxqthe5g14cb/WILLOW-RPG.pdf?rlkey=9ol013778nzcyahfmktxpgrwz&e=1&dl=0" target="_blank" rel="noopener">Open the system</a>
+      </div>
+    </section>
+
+    <hr class="divider">
+
+    <!-- ============ APPS & GAMES ============ -->
+    <section>
+      <h2 class="section-title">Apps &amp; Games</h2>
+
+      <div class="entry">
+        <div class="entry-head">
+          <h3 class="entry-name">The H Game</h3>
+          <span class="kind">browser solitaire</span>
+          <span class="tag">Original Creation</span>
+        </div>
+        <p class="desc">An original solitaire game built from scratch and playable right in your browser &mdash; a self-contained card game of my own design. No downloads; just click and play.</p>
+        <a class="read" href="https://solitaire-the-h-game.netlify.app" target="_blank" rel="noopener">Play now</a>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <h3 class="entry-name">Classic Concentration</h3>
+          <span class="kind">browser game</span>
+        </div>
+        <p class="desc">A playable tribute to the 1980s game show &mdash; the rebus-puzzle memory match brought to the browser. Pair the squares, reveal the puzzle, and solve it before the board runs out.</p>
+        <a class="read" href="https://classicconcentration.netlify.app" target="_blank" rel="noopener">Play now</a>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <h3 class="entry-name">Script Symphony System</h3>
+          <span class="kind">screenwriting tool</span>
+          <span class="tag">Original Creation</span>
+        </div>
+        <p class="desc">An original screenwriting tool built to help writers structure their scripts &mdash; a framework for shaping story beats and architecture that turns the blank-page problem into a guided, composable process.</p>
+        <a class="read" href="https://scriptsymphonysystem.netlify.app" target="_blank" rel="noopener">Open the app</a>
+      </div>
+    </section>
+
+    <hr class="divider">
+
+    <!-- ============ SCREENPLAYS ============ -->
+    <section>
+      <h2 class="section-title">Screenplays</h2>
+
+      <div class="entry">
+        <div class="entry-head">
+          <h3 class="entry-name">Friday the 13th: The Game &mdash; The Movie</h3>
+          <span class="kind">fan screenplay</span>
+        </div>
+        <p class="desc">A fan-fiction screenplay born from several hundred hours in Camp Crystal Lake &mdash; a full-length script reimagining the bloody cat-and-mouse chaos of <em>Friday the 13th: The Game</em> as a feature film.</p>
+        <a class="read" href="https://www.dropbox.com/scl/fi/n4u6z21b4f2iy48ft0ahu/FRIDAY-THE-13th-THE-GAME-THE-MOVIE.pdf?rlkey=e9eqyjvjzq3lc1nf7nqmjnzhm&e=1&dl=0" target="_blank" rel="noopener">Read the script</a>
+      </div>
+    </section>
+
+    <hr class="divider">
+
+    <!-- ============ DISCLAIMER ============ -->
+    <footer>
+      <p class="disclaimer">
+        Most of what&rsquo;s gathered here is <strong>unofficial, fan-made work</strong>, created out of love for the games, films, and shows that inspired it. No ownership, affiliation, or endorsement is claimed over any trademarks, characters, settings, or other intellectual property referenced &mdash; all such rights remain with their respective owners. The handful of pieces marked <strong>Original Creation</strong> (and the original game system noted above) are my own work. Nothing here is sold; it is shared freely, fan to fan.
+      </p>
+      <p class="colophon">&mdash; The Nerd Hub &mdash;</p>
+    </footer>
+
+  </main>
+</body>
+</html>
