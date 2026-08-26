@@ -174,6 +174,80 @@
   a.sub-link::before{content:"\21B3\00a0\00a0";opacity:.7;}
   a.sub-link:hover{color:var(--link-hover);border-color:var(--rule);}
 
+  /* in-page "example" opener link */
+  a.example-open{
+    display:inline-block;
+    margin-top:11px;
+    font-family:'EB Garamond',serif;
+    font-size:0.92rem;
+    letter-spacing:0.03em;
+    color:var(--link);
+    text-decoration:none;
+    border-bottom:1px dotted var(--rule);
+    cursor:pointer;
+    transition:color .18s ease,border-color .18s ease;
+  }
+  a.example-open::before{content:"\25B8\00a0\00a0";opacity:.7;}
+  a.example-open:hover{color:var(--link-hover);border-color:var(--link-hover);}
+
+  /* ---------- Example modal ---------- */
+  .modal-overlay{
+    position:fixed;inset:0;z-index:1000;
+    background:rgba(28,20,10,0.5);
+    display:none;align-items:flex-start;justify-content:center;
+    padding:5vh 18px;overflow-y:auto;
+  }
+  .modal-overlay.open{display:flex;}
+  .modal{
+    position:relative;
+    background-color:var(--paper);
+    background-image:
+      radial-gradient(120% 90% at 50% 0%, rgba(255,250,235,0.6) 0%, transparent 55%),
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
+    border:1px solid var(--rule);
+    border-radius:4px;
+    box-shadow:0 24px 70px rgba(20,14,6,0.42);
+    max-width:660px;width:100%;
+    margin:0 auto;
+    padding:38px 40px 42px;
+  }
+  .modal-close{
+    position:absolute;top:12px;right:15px;
+    background:none;border:0;cursor:pointer;
+    font-family:'EB Garamond',serif;font-size:1.8rem;line-height:1;
+    color:var(--ink-faint);padding:4px 8px;
+    transition:color .18s ease;
+  }
+  .modal-close:hover{color:var(--link-hover);}
+  .modal-title{
+    font-family:'IM Fell English',serif;font-weight:400;
+    font-size:1.7rem;line-height:1.15;margin:0 6px 2px 0;color:var(--ink);
+  }
+  .modal-sub{
+    font-family:'EB Garamond',serif;font-style:italic;
+    color:var(--ink-faint);font-size:0.95rem;margin:0 0 20px;letter-spacing:0.02em;
+  }
+  .prompt-note{
+    font-size:0.98rem;color:var(--ink-soft);
+    border-left:2px solid var(--rule);padding:3px 0 3px 16px;margin:0 0 24px;
+  }
+  .example-body{color:var(--ink);font-size:1.02rem;line-height:1.62;}
+  .example-body p{margin:0 0 14px;}
+  .example-body .sub{
+    font-family:'IM Fell English',serif;font-size:1.18rem;
+    margin:24px 0 12px;color:var(--ink);
+  }
+  .example-body .gm-note{
+    font-style:italic;color:var(--ink-soft);
+    background:rgba(138,43,30,0.06);
+    border:1px solid rgba(138,43,30,0.25);
+    border-radius:3px;padding:10px 14px;margin:0 0 16px;font-size:0.95rem;
+  }
+  @media (max-width:520px){
+    .modal{padding:30px 22px 34px;}
+    .modal-title{font-size:1.45rem;}
+  }
+
   /* volume rows */
   .volumes{
     display:flex;
@@ -345,6 +419,7 @@
         <p class="desc">A complete Shadowrun 2nd Edition campaign, run by an AI gamemaster from your own terminal. You download a knowledge base &mdash; 39 sourcebooks and roughly 50 published adventures, sequenced into eight seasons of cyberpunk-and-magic Seattle, 2053 to 2063 &mdash; point Claude Code at it, and play. It uses the real rules and rolls every die, and lets the metaplot reach you as news: the 2057 election, a dragon president&rsquo;s assassination, an arcology sealing shut with a hundred thousand people inside. Play solo with a crew you draft, around a table, or as a human GM&rsquo;s oracle. Someone who has never heard of a dice pool can play it start to finish. Free to download; runs on Claude Code, with Opus recommended.</p>
         <a class="read" href="https://shadowrungen.netlify.app" target="_blank" rel="noopener">Open the campaign</a>
         <br><a class="sub-link" href="https://www.dropbox.com/scl/fi/ilq0fay0uxmkkxh8xamdn/SHADOWRUN-CAMPAIGN.pdf?rlkey=5ft32lda8tm2htq6dccp8tcgm&st=g9gcke5p&dl=0" target="_blank" rel="noopener">Campaign Outline (GM guide)</a>
+        <br><a class="example-open" data-modal="modal-shadowrun" href="#" role="button">Read an example session</a>
       </div>
 
       <div class="entry">
@@ -355,6 +430,7 @@
         <p class="desc">The same treatment for Earthdawn: a downloadable knowledge base that Claude Code runs as your gamemaster. 56 published adventures sequenced into eight seasons of high fantasy in Barsaive, 1506 to 1513 TH, backed by rules data covering 50 Disciplines, 402 talents, and 454 spells. It plays by the book and writes everything down, so a character invented in session three still exists, by name, in session thirty. The campaign builds to the ending the rulebook named but never wrote: a council of dragons commissioning your party to destroy the Horror that hunts dragons. It sits six thousand years before Shadowrun in the same world and the same cycle of magic; play either alone, or both, and watch the two halves lock together. Free to download; runs on Claude Code.</p>
         <a class="read" href="https://earthdawn.netlify.app" target="_blank" rel="noopener">Open the campaign</a>
         <br><a class="sub-link" href="https://www.dropbox.com/scl/fi/nfrcd19f4tz5efuz21yzl/EARTHDAWN-CAMPAIGN.pdf?rlkey=gu3n4fqlauncvrx66p0mh6fqe&st=iqoabdft&dl=0" target="_blank" rel="noopener">Campaign Outline (GM guide)</a>
+        <br><a class="example-open" data-modal="modal-earthdawn" href="#" role="button">Read an example session</a>
       </div>
     </section>
 
@@ -575,5 +651,96 @@
     </footer>
 
   </main>
+
+  <!-- ============ EXAMPLE MODALS ============ -->
+  <div class="modal-overlay" id="modal-shadowrun" role="dialog" aria-modal="true" aria-labelledby="sr-ex-title">
+    <div class="modal">
+      <button class="modal-close" aria-label="Close">&times;</button>
+      <h3 class="modal-title" id="sr-ex-title">Seattle to Aberdeen</h3>
+      <p class="modal-sub">Shadowrun 2nd Edition &mdash; example session</p>
+      <p class="prompt-note">The test: a player wanted to drive from Seattle to Aberdeen, Washington &mdash; a town written up in none of the Shadowrun sourcebooks. With no canon entry to lean on, the gamemaster blended real-world geography with Shadowrun canon in about ninety seconds, and marked exactly where the canon ended and its own extrapolation began.</p>
+      <div class="example-body">
+        <p class="sub">The drive</p>
+        <p>First problem: this isn&rsquo;t a drive, it&rsquo;s an emigration.</p>
+        <p>Seattle is a UCAS enclave sitting entirely inside the Salish-Shidhe Council &mdash; the sourcebook&rsquo;s own comparison is Berlin during the Cold War. Every land route out passes through Native land. There are exactly three sanctioned ground routes, and you want the South Road, which is what&rsquo;s left of old I-5.</p>
+        <p>So before anything else you go to the Council Lodge &mdash; a massive Salish longhouse, the only formal S-S presence in the metroplex &mdash; and you get a transit pass. Blue ticket. You display it prominently on the windscreen, and you do not get creative about that.</p>
+        <p>Out through the southern sprawl, Tacoma thinning around you, and then the border proper: UCAS on one side, Salish-Shidhe on the other, and the road narrowing through the checkpoint. Blue ticket, faces checked against faces, and if your cargo is boring you&rsquo;re waved through in ten minutes.</p>
+        <p>Then something a Seattle native finds genuinely disorienting happens: the sprawl stops. Not thins &mdash; stops. Second-growth forest comes right up to the shoulder, and the corridor runs through it like a seam. Salish land isn&rsquo;t wilderness; it&rsquo;s managed, and you can see it in the tree spacing if you know to look. Wind turbines on the ridgelines. No billboards. No squatter camps. The road surface is better than anything in Redmond.</p>
+        <p>Ninety minutes south, near what used to be Olympia, you reach the turn west &mdash; and this is the part that matters.</p>
+        <p>The South Road continues south, sanctioned, patrolled, fine. The road to Aberdeen is not the South Road. Turning west takes you off the prescribed route into Salish land proper, and the book is blunt about what that means: travel outside the prescribed routes is not recommended &mdash; armed border and highway patrols operate under &ldquo;reasonable cause.&rdquo;</p>
+        <p>The Salish maintain a standing Ranger Force of elite troopers plus Coast and Border Patrols. They are not Lone Star. They are not corrupt, they are not overworked, and they are not impressed by a UCAS SIN. What you need is an actual reason to be going to Aberdeen, and ideally a Salish name who&rsquo;ll confirm it.</p>
+        <p>Grant that, and the last fifty miles are the prettiest driving in the Pacific Northwest &mdash; old US-12 west through the Chehalis valley, the country dropping and greening, rain starting somewhere around Elma and never really stopping.</p>
+        <p class="sub">Aberdeen</p>
+        <p class="gm-note">&#9888; Everything below is mine. The KB has no entry for it &mdash; the only Aberdeen in the folder is the Scottish one, a pirate port in the Wild Lands.</p>
+        <p>It&rsquo;s raining. It was raining before you arrived and it will be raining when you leave. Aberdeen sits where the Chehalis River opens into Grays Harbor, and it gets rain the way Seattle only imagines it does.</p>
+        <p>Here&rsquo;s what the town is: it was an Anglo timber port, it boomed for a century, and it was already dying long before the Awakening. Then the Ghost Dance happened, the maps changed, and Aberdeen woke up inside the Salish-Shidhe Council.</p>
+        <p>And then &mdash; this is the part outsiders get wrong &mdash; it got better.</p>
+        <p>The Salish are custodians of the region&rsquo;s timber, and their economy is fishing, power and trade. Aberdeen is where all three touch salt water. So the mills are running: smaller than they were, quieter, non-polluting in the way S-S tech tends to be, cutting on a rotation measured in decades instead of quarters. Log booms in the river. Fishing boats working the harbor on quotas that are actually enforced. A deep-water port on the open Pacific that answers to a tribal council rather than to Seattle.</p>
+        <p>It&rsquo;s a working town of maybe fifteen thousand that looks poorer than it is, because nobody here spends money on frontage.</p>
+        <p>Three populations, layered:</p>
+        <p>The Salish, who run it &mdash; harbor authority, mills, quotas, the Ranger detachment. Modern, educated, unhurried, and completely uninterested in explaining themselves to you.</p>
+        <p>The old families &mdash; the Anglo and Scandinavian timber and fishing people whose great-grandparents built the place and who simply stayed. Some assimilated, some married in, most just kept working the same water. They&rsquo;re citizens under Council law and it&rsquo;s a touchier subject than anyone will admit to a stranger.</p>
+        <p>And the pinkskins &mdash; non-Amerindians who took up Indian philosophies wholesale, and who canon flags as the ones that reject high technology entirely. On the coast, out past Hoquiam and up the Humptulips, that&rsquo;s a real community. No commlinks, no grid, deeply suspicious of anyone from the sprawl, and not remotely the harmless hippies a Seattle runner will assume.</p>
+        <p>What a runner should actually notice: it&rsquo;s a Pacific deep-water port with a small patrol presence, a hundred-odd miles of empty coastline either side of it, and the nearest UCAS jurisdiction two hours inland. Everything that makes Aberdeen quiet makes it useful. Nobody in town will say a word about that.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="modal-earthdawn" role="dialog" aria-modal="true" aria-labelledby="ed-ex-title">
+    <div class="modal">
+      <button class="modal-close" aria-label="Close">&times;</button>
+      <h3 class="modal-title" id="ed-ex-title">Kratas, the City of Thieves</h3>
+      <p class="modal-sub">Earthdawn &mdash; example session</p>
+      <p class="prompt-note">The test: describe Kratas, the City of Thieves, in the gamemaster&rsquo;s voice, with a party approaching the walls. In under a minute it produced the following &mdash; canon-accurate throughout.</p>
+      <div class="example-body">
+        <p>The road has been climbing for most of the afternoon &mdash; not steeply, just the long patient rise of the Dinganni Plains toward the north &mdash; and you see it a full two hours before you reach it.</p>
+        <p>Kra Tys. The mesa. Three hundred yards of sheer red rock standing up out of flat grassland, so out of place it looks dropped there. And spilled across its foot, fanned out from the cliff like something poured and left to dry: Kratas.</p>
+        <p>From this distance it reads wrong before you can say why. Then you have it. There is a shape carved down the face of the mesa &mdash; a vast curve of worked stone, ribbed, deliberate, hundreds of feet across &mdash; and it is broken. Whatever that dome was meant to hold, it did not hold. The rock beneath it is stained in long dark streaks where four centuries of rain have run through the gap.</p>
+        <p>Closer, and the city resolves into detail you like even less. Battlements. Wall-spikes. Barred windows on the upper storeys, every one of them. Not a wall around a city &mdash; a city that is made of walls, each building fortified against the building beside it.</p>
+        <p>Whole quarters are dark and roofless. Not ruined-recently: ruined and lived around, weeds established, a washing line strung between two collapsed fa&ccedil;ades.</p>
+        <p>And the wind is coming off it toward you. Old sewage, wet ash, and something sweetish underneath. There is a slope below the eastern wall where the city simply throws its rubbish over, and it has been doing so for eighty years.</p>
+        <p>What you do not hear is a city. Travar at this distance would be a low roar. Kratas gives you cart-wheels, a dog, someone shouting once and stopping. Too few voices for that much building.</p>
+        <p>A mile out, where the old Theran road bends, there&rsquo;s a squat stone inn with iron bands across its door and steam rising off a walled pool at the back. Hot spring. The sign is a hand gripping an axe &mdash; the Axe in Hand. Two mercenaries are dicing on the step and neither looks up as you pass.</p>
+        <p>A woman is drawing water in the yard. Young, human, rough-handed, entirely uninterested in you until you look like you might be stopping &mdash; then she straightens, courteous and about a mile away behind the eyes.</p>
+        <p>&ldquo;Room&rsquo;s five silver. Meal with ale, four. Bath&rsquo;s included, if you&rsquo;re bathing.&rdquo; She tilts her head toward the mesa. &ldquo;Gate&rsquo;s ten silver to walk through, and it shuts at dark. So you&rsquo;re deciding now, whether you know it or not.&rdquo;</p>
+        <p>She goes back to the bucket.</p>
+        <p>&ldquo;I&rsquo;ll tell you what I tell everyone, and you can do what you like with it. This house doesn&rsquo;t protect anybody. Wags say the inn&rsquo;s Name describes the recommended sleeping posture.&rdquo;</p>
+        <p>The sun is maybe ninety minutes off the horizon. The gate is a mile north.</p>
+        <p>What do you do?</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      function closeAll() {
+        document.querySelectorAll('.modal-overlay.open').forEach(function (ov) {
+          ov.classList.remove('open');
+        });
+        document.body.style.overflow = '';
+      }
+      document.querySelectorAll('[data-modal]').forEach(function (opener) {
+        opener.addEventListener('click', function (e) {
+          e.preventDefault();
+          var m = document.getElementById(opener.getAttribute('data-modal'));
+          if (m) {
+            m.classList.add('open');
+            m.scrollTop = 0;
+            document.body.style.overflow = 'hidden';
+          }
+        });
+      });
+      document.querySelectorAll('.modal-overlay').forEach(function (ov) {
+        ov.addEventListener('click', function (e) {
+          if (e.target === ov || e.target.classList.contains('modal-close')) {
+            closeAll();
+          }
+        });
+      });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') closeAll();
+      });
+    })();
+  </script>
 </body>
 </html>
