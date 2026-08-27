@@ -262,6 +262,42 @@
     margin:24px 0 12px;color:var(--ink);
   }
   .example-body .roster{font-style:italic;color:var(--ink-soft);margin:0 0 14px;}
+  .example-body strong{color:var(--ink);font-weight:600;}
+  .example-body h4.subsub{
+    font-family:'EB Garamond',serif;font-weight:600;
+    font-size:1.04rem;letter-spacing:0.01em;margin:20px 0 8px;color:var(--ink);
+  }
+  .example-body ul{margin:0 0 14px;padding-left:20px;}
+  .example-body li{margin:0 0 7px;}
+  .example-body table{
+    width:100%;border-collapse:collapse;margin:6px 0 18px;font-size:0.94rem;
+  }
+  .example-body th,.example-body td{
+    text-align:left;padding:7px 11px;vertical-align:top;
+    border-bottom:1px solid rgba(201,184,144,0.55);
+  }
+  .example-body th{
+    font-family:'EB Garamond',serif;font-weight:600;color:var(--ink);
+    border-bottom:1px solid var(--rule);
+  }
+  .example-body td.num,.example-body th.num{text-align:right;white-space:nowrap;}
+  .example-body pre{
+    font-family:ui-monospace,Menlo,Consolas,'Courier New',monospace;
+    font-size:0.7rem;line-height:1.4;color:var(--ink-soft);
+    background:rgba(120,95,55,0.07);border:1px solid var(--rule);border-radius:3px;
+    padding:12px 14px;margin:0 0 16px;overflow-x:auto;white-space:pre;
+  }
+  .example-body .statblock{
+    font-size:0.95rem;color:var(--ink-soft);
+    background:rgba(120,95,55,0.06);border-left:2px solid var(--rule);
+    padding:9px 14px;margin:0 0 14px;line-height:1.6;
+  }
+  .example-body .statblock strong{color:var(--ink-soft);}
+  .example-body code{
+    font-family:ui-monospace,Menlo,Consolas,'Courier New',monospace;
+    font-size:0.86em;background:rgba(120,95,55,0.1);
+    padding:1px 5px;border-radius:3px;color:var(--ink-soft);
+  }
   .example-body .gm-note{
     font-style:italic;color:var(--ink-soft);
     background:rgba(138,43,30,0.06);
@@ -747,6 +783,99 @@
           </div>
         </div>
 
+        <div class="example-slide">
+          <h3 class="modal-title">The Redmond Barrens gang</h3>
+          <p class="modal-sub">Shadowrun 2nd Edition &mdash; example session</p>
+          <p class="prompt-note">The test: the players tracked a go-gang to an abandoned apartment complex in the Redmond Barrens and decided, unprompted, to infiltrate it. The GM asked for a layout, opposition stats, other challenges, and gang numbers. It placed the whole thing in canon and built this.</p>
+          <div class="example-body">
+            <p>Redmond canon lines up unusually well here &mdash; let me build it.</p>
+            <h4 class="subsub">Placement &mdash; put it in Bargain Basement</h4>
+            <p>The district&rsquo;s own neighborhood list includes <strong>Bargain Basement: decayed apartment blocks turned street market.</strong> That&rsquo;s your complex, canon-placed, no invention needed.</p>
+            <p class="gm-note">&#9888;&#9888; The single most important fact for this session: Lone Star rates every Redmond neighborhood E, and only the Bellevue-border strip sees patrols at all. Nobody is coming. Not for the players, not for the gang. Whatever happens in this building is settled by the people in it &mdash; say that in fiction early, because it changes how a smart party plans.</p>
+            <p>Background for flavor: this block died in the <strong>Computer Crash of &rsquo;29</strong>, when 80% of the district&rsquo;s businesses collapsed inside a year and the district government simply failed. It was mid-market housing for a business-information workforce that ceased to exist. Nobody boarded it up. People just left.</p>
+            <h4 class="subsub">The building &mdash; &ldquo;Cedar Court&rdquo;</h4>
+            <p>Four floors plus a half-sunk parking level, built as a <strong>U around a central courtyard</strong>, open side facing east. Concrete frame, cheap infill, thirty years of rain.</p>
+<pre>                 N
+        &#9484;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9488;
+        &#9474;   NORTH WING     &#9474;   4 floors &middot; mostly collapsed
+        &#9474;   [structurally  &#9474;   west stair GONE
+        &#9474;    unsound]      &#9474;
+   &#9484;&#9472;&#9472;&#9472;&#9472;&#9508;                  &#9500;
+   &#9474; W  &#9474;    COURTYARD     &#9474;      &#8592; open east side,
+   &#9474; E  &#9474;   (bikes here)   &#9474;        chainlink + junk barricade
+   &#9474; S  &#9474;                  &#9474;
+   &#9474; T  &#9500;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9508;
+   &#9492;&#9472;&#9472;&#9472;&#9472;&#9508;   SOUTH WING     &#9474;   4 floors &middot; INTACT &middot; the nest
+        &#9492;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9496;
+     &#9660; parking ramp (south end, half-flooded)</pre>
+            <p><strong>Ground floor, south wing</strong> &mdash; the common room. Sofas dragged from twenty apartments, oil-drum fire, a stolen trid rig running off a genset you can hear from outside. This is where most of them are.</p>
+            <p><strong>Second floor, south wing</strong> &mdash; bunkrooms. Off-shift gangers sleeping. Two units at the east end are the leader&rsquo;s.</p>
+            <p><strong>Third floor</strong> &mdash; storage. The take. Chop-shop parts, crates, whatever they lifted that got them followed.</p>
+            <p><strong>Fourth floor</strong> &mdash; mostly open to the sky. <strong>One lookout</strong> with a clear view of the east approach and the courtyard.</p>
+            <p><strong>The parking level</strong> &mdash; half-flooded, knee-deep, black water, floating debris. &#11088; Connects to the courtyard by a ramp and to the north wing by a service corridor the gang thinks is impassable. It isn&rsquo;t quite.</p>
+            <p><strong>The north wing</strong> &mdash; genuinely dangerous, and not because of gangers. Partial collapse. The gang doesn&rsquo;t go in there.</p>
+            <h4 class="subsub">Who&rsquo;s inside</h4>
+            <p><strong>22 in the gang &middot; 14 on site tonight.</strong></p>
+            <table><thead><tr><th>Where</th><th>Who</th><th>Count</th></tr></thead><tbody>
+              <tr><td>Ground common room</td><td>Rank-and-file, drinking, half-attentive</td><td><strong>6</strong></td></tr>
+              <tr><td>2nd floor bunks</td><td>Asleep or nearly &mdash; 1D6 rounds to respond, unarmored</td><td><strong>4</strong></td></tr>
+              <tr><td>Courtyard, by the bikes</td><td>Working on a chopped engine, tools out</td><td><strong>2</strong></td></tr>
+              <tr><td>4th floor lookout</td><td>Alert, has a horn</td><td><strong>1</strong></td></tr>
+              <tr><td>2nd floor east suite</td><td>The Boss</td><td><strong>1</strong></td></tr>
+            </tbody></table>
+            <p class="gm-note">&#9888; The eight not on site are out riding, and they can come home mid-scene. That&rsquo;s your escalation lever &mdash; don&rsquo;t spend it unless the party stalls or gets sloppy.</p>
+            <h4 class="subsub">Rank-and-file ganger &mdash; Professional Rating 1</h4>
+            <div class="statblock"><strong>B</strong> 3 &middot; <strong>Q</strong> 3 &middot; <strong>S</strong> 3 &middot; <strong>C</strong> 3 &middot; <strong>I</strong> 3 &middot; <strong>W</strong> 3 &middot; <strong>E</strong> 6 &middot; <strong>R</strong> 3<br>
+            <strong>Skills:</strong> Firearms 3 &middot; Unarmed Combat 3 &middot; Bike 4 &middot; Stealth 2 &middot; Etiquette (Street) 2<br>
+            <strong>Gear:</strong> Armored jacket (5/3), Ares Predator or club, survival knife, cheap commlink</div>
+            <p class="roster">&#9888; PR 1 &mdash; they break. Two down and the rest look for the door or a hostage.</p>
+            <h4 class="subsub">Enforcer &mdash; PR 2 &mdash; 2 of the six downstairs are this</h4>
+            <div class="statblock"><strong>B</strong> 4 (5) &middot; <strong>Q</strong> 4 &middot; <strong>S</strong> 5 &middot; <strong>C</strong> 3 &middot; <strong>I</strong> 3 &middot; <strong>W</strong> 4 &middot; <strong>E</strong> 4.2 &middot; <strong>R</strong> 4<br>
+            <strong>Skills:</strong> Firearms 4 &middot; Unarmed Combat 5 &middot; Armed Combat 4 &middot; Bike 5<br>
+            <strong>Cyber:</strong> Dermal plating 1, smartlink, muscle replacement 1<br>
+            <strong>Gear:</strong> Uzi III w/ smartgun, armored jacket</div>
+            <h4 class="subsub">The Boss &mdash; PR 2&ndash;3 &mdash; canon block</h4>
+            <div class="statblock"><strong>B</strong> 3 &middot; <strong>Q</strong> 3 &middot; <strong>S</strong> 4 &middot; <strong>C</strong> 4 &middot; <strong>I</strong> 4 &middot; <strong>W</strong> 4 &middot; <strong>E</strong> 6 &middot; <strong>R</strong> 3<br>
+            <strong>Skills:</strong> Armed Combat 4 &middot; <strong>Etiquette (Street) 6</strong> &middot; Firearms 4 &middot; <strong>Leadership 4</strong> &middot; Unarmed 2</div>
+            <p>&#11088;&#11088; <strong>Etiquette (Street) 6 and Leadership 4 is the whole character.</strong> This is not a thug &mdash; it&rsquo;s someone who talks first, counts the odds, and keeps twenty-odd people alive in a district that eats gangs. <strong>They will negotiate</strong>, and if your players are the kind who&rsquo;d rather deal than shoot, this is where the session gets good.</p>
+            <p>&#11088; <em>Optional wildcard:</em> make one bunkroom sleeper a <strong>wiz-kid</strong> &mdash; a Force 3 mage with Manabolt and Levitate. Turns a straightforward infiltration into a real problem, and Redmond has the wizzer-gang precedent.</p>
+            <h4 class="subsub">The five real challenges</h4>
+            <p><strong>&#9312; The lookout is the whole problem.</strong> Fourth floor, clear sight of the east approach and courtyard, and a horn. Everything the party does outside is an opposed <strong>Stealth vs. Perception (4)</strong> &mdash; and note the modifier the Barrens gives you for free: there&rsquo;s <strong>no working street lighting</strong>, so it&rsquo;s a &minus;2 visibility penalty for them and cover for the party.</p>
+            <p><strong>&#9313; The courtyard is a kill box.</strong> Open ground, one barricaded entrance, overlooked on three sides. &#9888; A party that walks in the front is doing exactly what the building was fortified to punish.</p>
+            <p><strong>&#9314; The flooded parking level &mdash; the good route, with a price.</strong> Knee-deep black water. Movement is halved, <strong>Stealth at +2 TN</strong> because of the noise, and there&rsquo;s a genuine hazard: <strong>submerged rebar and debris, Body (4) or take Light physical.</strong> But it connects to the north wing service corridor, which means it&rsquo;s the only way into the complex the gang doesn&rsquo;t watch.</p>
+            <p><strong>&#9315; The north wing will hurt somebody.</strong> Partial collapse. Crossing it needs <strong>Athletics (5)</strong> at two points, and a failure means a floor gives way &mdash; a story down into rubble, <strong>6M physical</strong>, and <strong>noise the lookout gets a Perception (3) to catch.</strong> The gang avoids this wing entirely, which is exactly why it&rsquo;s the back door.</p>
+            <p><strong>&#9316; Squatters.</strong> &#11088; 79% of Redmond lives below the poverty line and the abandoned buildings are full. There is <strong>a family of four in the north wing</strong>, third floor, who are not gangers and have nothing to do with any of this. They will be terrified. They will make noise. And what the party does about them is the moral spine of the whole run &mdash; because the gang doesn&rsquo;t know they&rsquo;re there either.</p>
+            <h4 class="subsub">How it&rsquo;s likely to go</h4>
+            <p><strong>Quiet:</strong> parking ramp &rarr; flooded level &rarr; service corridor &rarr; north wing &rarr; across at the third floor &rarr; into the south wing&rsquo;s storage floor from above. They get the take, and possibly never fire a shot.</p>
+            <p><strong>Loud:</strong> the courtyard fight is 8 gangers in the open with 4 more coming down the stairs in 1D6 rounds. Winnable, but the noise carries, and eight more are out on the road.</p>
+            <p><strong>Talked:</strong> the Boss has Etiquette 6 for a reason. If the party can reach them without killing anyone first, there&rsquo;s a deal here &mdash; whatever the gang stole probably isn&rsquo;t worth dying over to someone who&rsquo;s kept twenty people fed this long.</p>
+            <p class="gm-note">&#9888; Two things I invented and you should note as canon if you use them: Cedar Court itself and the squatter family. The Barrens&rsquo; placement, the E-rating, the poverty figure, the Crash of &rsquo;29 backstory, and the gang boss stat block are all straight out of the folder.</p>
+          </div>
+        </div>
+
+        <div class="example-slide">
+          <h3 class="modal-title">Pike Place Market, 9 PM</h3>
+          <p class="modal-sub">Shadowrun 2nd Edition &mdash; example session</p>
+          <p class="prompt-note">The test: as GM, describe a street samurai entering Pike Place Market at 9 PM in October, there to find a Mr. Johnson &mdash; a female ork, redhead, golden cybereye. About a minute later:</p>
+          <div class="example-body">
+            <p>Rain, then. It&rsquo;s been raining since four and it hasn&rsquo;t got serious about it &mdash; just steady, cold, and enough to put a shine on everything.</p>
+            <p>1431 First Avenue. The Market&rsquo;s been here since 1907, and it looks it. Brick and timber and a hundred and forty years of paint, the big red neon PUBLIC MARKET sign buzzing overhead with two letters dimmer than the rest. Below it the clock says 9:04.</p>
+            <p>Most of it&rsquo;s shut. Roll-down shutters on the flower stalls, the bookstores dark, the coffee places wiped down and stacked. But the Main Arcade is still half-alive &mdash; the fishmongers and the farmers work off wooden ice-boxes, same as they have for a century, and a few of them are still standing behind them because the last of the restaurant buyers come through late.</p>
+            <p>And that&rsquo;s the thing your nose tells you before your eyes do: this place smells like real food. Not soy. Ice and fish-blood and wet cardboard, and under it something green and earthy from a produce stall that&rsquo;s still got actual dirt on actual vegetables. Petrowski Farms, by the crate stencils. Four generations, and they truck it in from a compound with electrified fence and ten guard towers, because that&rsquo;s what it takes to grow food in this plex and get it to market.</p>
+            <p>You could eat here for a week on what some people spend on a magazine.</p>
+            <p>Now the part you&rsquo;re actually reading.</p>
+            <p>Security is a joke and you clocked it walking in. Three, maybe four Lone Star down at the far end where the pastry shops are, standing under the awning out of the rain, drinking something hot, facing each other instead of the room. That&rsquo;s the entire law-enforcement presence for the whole Market.</p>
+            <p>Sightlines are terrible. The Arcade is a long shallow S &mdash; stalls and support columns every four meters, produce crates stacked chest-high, and the level drops in three places you can&rsquo;t see over. Half a dozen ways out that you can see and probably twice that you can&rsquo;t; the Market runs down the hillside in levels, and there are stairs and service ramps punched through it in every direction.</p>
+            <p class="gm-note">&#9888; Anybody who picked this spot for a meet picked it because of that. No cameras worth the name, no corp security, and if it goes bad the nearest badge is ninety meters away and looking the wrong direction.</p>
+            <p>People still here: two fishmongers hosing down. A dwarf at the end of the Arcade breaking down a flower stall very slowly. Four or five buyers with hand-carts. A pair of kids sheltering from the rain who are watching everyone&rsquo;s pockets. And an old man asleep sitting up on a bench who might be asleep.</p>
+            <p>And down the Arcade, maybe thirty meters, past the second drop in the floor &mdash; someone sitting on the lip of an empty ice-box, out of the light, with a coffee they aren&rsquo;t drinking. Ork. Big. Not moving much.</p>
+            <p>You can&rsquo;t see hair colour from here. The overheads down that end are out.</p>
+            <p>But when they turned their head a moment ago, something caught the light &mdash; one small point of gold, at eye level, that didn&rsquo;t move the way an eye moves.</p>
+            <p>They haven&rsquo;t looked at you yet. Or they have, and you didn&rsquo;t notice, which would be worse.</p>
+            <p>What do you do?</p>
+          </div>
+        </div>
+
       </div>
     </div>
   </div>
@@ -806,6 +935,162 @@
             <p>So the question isn&rsquo;t whether the party wins. It&rsquo;s who else at that campfire knows what these things are worth &mdash; and my recommendation is that one of the caravan&rsquo;s own does. A teamster who goes for a bucket instead of a blade. Who wants them bled, not killed clean. Who gets between a player&rsquo;s weapon and a dying animal and won&rsquo;t explain why.</p>
             <p>Because either he&rsquo;s marked, or someone waiting for him at Travar is.</p>
             <p>That turns a trivial fight into: a man in your care is behaving strangely under arms at night, the merchant who pays you wants the animals protected and the schedule kept, and there is a commodity on the ground that certain people would pay a great deal for. Nobody has to draw on anybody. But they might.</p>
+          </div>
+        </div>
+
+        <div class="example-slide">
+          <h3 class="modal-title">The Parlainth Adventure Path</h3>
+          <p class="modal-sub">Earthdawn &mdash; example session</p>
+          <p class="prompt-note">The test: summarize the six <em>Parlainth: the Forgotten City</em> adventures in order, in broad strokes, as a briefing for a GM. What came back was this overview of the whole path.</p>
+          <div class="example-body">
+            <p><strong>Six books &middot; Circle 9 &rarr; 14 &middot; roughly a year of play.</strong> Everything happens in one ruined city and the shantytown on its edge.</p>
+            <p class="sub">Part One &mdash; What you need to know before Book 1</p>
+            <h4 class="subsub">Parlainth</h4>
+            <p>Parlainth was the <strong>Theran provincial capital of Barsaive</strong> &mdash; the seat of imperial authority, a city of three great pyramids and broad boulevards. Then the Scourge came.</p>
+            <p>The Therans didn&rsquo;t build a kaer for it. They did something far stranger: <strong>they made the entire city vanish.</strong> A ritual folded Parlainth out of the world and erased it from every map and every memory &mdash; nobody alive knew it had ever existed. It sat outside reality for four centuries.</p>
+            <p>In <strong>1452 TH it came back.</strong> What returned was a ruin, and it was not empty. &#9888; The Horrors had gotten inside <em>before</em> it vanished, and they&rsquo;d had four hundred undisturbed years with the population.</p>
+            <p>Today it&rsquo;s the richest and deadliest delve in Barsaive &mdash; <em>&ldquo;a last refuge for the Horrors,&rdquo;</em> and, in the sourcebook&rsquo;s own words, <strong>&ldquo;a puzzle with most of the pieces still missing.&rdquo;</strong></p>
+            <p class="gm-note">&#9888; Set expectations early: treasure exists in proportion to danger. A party may enter a dozen times before they carry out anything worth real silver, and half of what they find only has value if somebody will buy it.</p>
+            <h4 class="subsub">Haven &mdash; where the party lives</h4>
+            <p>The base camp. A walled shantytown built into the ruins&rsquo; southeastern corner, founded around 1485 by <strong>TORGAK</strong>, an <strong>8th Circle Troll Warrior</strong> who runs a supply store and, functionally, the town. <em>&ldquo;Some say Torgak is Haven.&rdquo;</em></p>
+            <p>Haven exists to service delvers: supplies, rumors, fences, a healer, and an information economy. Your party will start and end nearly every book here, so make it real early &mdash; it&rsquo;s the campaign&rsquo;s home base for six books.</p>
+            <h4 class="subsub">The quarters of the ruins</h4>
+            <table><thead><tr><th>Quarter</th><th>What it is</th></tr></thead><tbody>
+              <tr><td><strong>The Smalls</strong></td><td>Southeast residential ruin. Haven sits inside it; <strong>Gatetown</strong> (Book 2) is carved out of it.</td></tr>
+              <tr><td><strong>The Twists</strong></td><td>The old Merchant Quarter, south. Winding spiral streets, intact shopfronts drowned in fungus, permanent overcast, <strong>the worst undead concentration in the ruins</strong>.</td></tr>
+              <tr><td><strong>The War Zone</strong></td><td>West. Where the <strong>falsemen</strong> fight.</td></tr>
+              <tr><td><strong>The Vaults</strong></td><td>The Imperial Palace district, facing the <strong>Screaming Fountain</strong>. The dragon&rsquo;s seat.</td></tr>
+            </tbody></table>
+            <h4 class="subsub">Falsemen</h4>
+            <p>Horror-made constructs &mdash; <strong>straw, wax, stone and steel</strong>, ascending in nastiness &mdash; who have staged <strong>simulated wars against each other in the War Zone for centuries</strong>, endlessly, for no reason anyone has determined. Haven residents bet on the outcomes.</p>
+            <h4 class="subsub">The people who matter</h4>
+            <p><strong>CHARCOALGRIN</strong> &mdash; a <strong>great dragon</strong> lairing in the Vaults, with a gang of thugs and delvers called <strong>the UNFORGIVABLES</strong> working for her. To Haven she&rsquo;s a local power and a menace. She is also, though nobody knows it, the reason for everything.</p>
+            <p><strong>KAMILAR</strong> &mdash; a <strong>Theran wizard</strong> running Thera&rsquo;s operation in the ruins. His ambition is to make Parlainth a <em>living Theran capital</em> again. He is patient, he has resources, and he does not go away.</p>
+            <p><strong>THE TORMENTOR</strong> &mdash; a Horror. The path&rsquo;s true villain, working through puppets for five books before it&rsquo;s ever confronted.</p>
+            <h4 class="subsub">The three-way politics</h4>
+            <p>Everything is a contest between:</p>
+            <ul>
+              <li><strong>CHARCOALGRIN and the Unforgivables</strong> &mdash; the dragon&rsquo;s local power</li>
+              <li><strong>THROAL and the Council</strong> &mdash; the dwarf kingdom, Barsaive&rsquo;s great free power, who want the ruins studied and controlled</li>
+              <li><strong>THERA, via Kamilar</strong> &mdash; the old empire, wanting its capital back</li>
+            </ul>
+            <h4 class="subsub">The secret under all six books</h4>
+            <p>Worth knowing now, because it shapes everything and the players learn it last.</p>
+            <p><strong>Before the Scourge, Charcoalgrin loved a human.</strong> Her own Wizard student, <strong>EYRIPEMES</strong>. Against the dragons&rsquo; own law she gave him dragon-shift power and a near-draconic lifespan.</p>
+            <p><strong>To save him from the Scourge, she taught the Therans the vanishing ritual</strong> &mdash; the one that hid Parlainth and erased it from memory. That was her doing. She hid an entire city to protect one man.</p>
+            <p><strong>Eyripemes is still alive.</strong> The Tormentor holds him captive, and it is his trapped pattern that bleeds the <strong>Nexuses</strong> &mdash; the raw tears between astral space and the material world that riddle the ruins and make Parlainth uniquely, permanently wrong.</p>
+            <p>Every horror in this campaign traces back to a dragon who loved somebody.</p>
+            <p class="sub">Part Two &mdash; The six books</p>
+            <h4 class="subsub">1 &middot; Relics of the Forgotten City &mdash; Circle 9</h4>
+            <p><em>A three-faction manhunt for an object nobody understands.</em></p>
+            <p>A veteran ruin-crew called the <strong>Radawal Rogues</strong> loots an abandoned workshop in the Smalls and comes away with a small marble statue: a robed noble with a winged serpent coiled at his feet. They think it&rsquo;s ordinary Parlainth statuary and add it to their hoard.</p>
+            <p>It is a <strong>pattern item to Eyripemes</strong> &mdash; an object magically bound into his personal pattern, meaning whoever holds it holds a thread to him. It is the load-bearing object of the entire campaign.</p>
+            <p>The party is hired to find it. So is everyone else. All three factions want it and none of them will say why, because none of them knows &mdash; they only know something is worth wanting.</p>
+            <p>&#11088;&#11088;&#11088; <strong>The book ends on a single choice: who do you hand it to?</strong> That decision <strong>locks which two factions the party has alienated</strong>, and that configures the next five books. Track it from the first session.</p>
+            <p><em>Also here:</em> Kamilar&rsquo;s operation surfaces, the Rogues make good recurring rivals or corpses, and there&rsquo;s an optional side-dungeon in the Old Baths with a zombie bog-gob &ldquo;king&rdquo; in it.</p>
+            <h4 class="subsub">2 &middot; In Treachery&rsquo;s Shadow &mdash; Circle 9&rarr;10</h4>
+            <p><em>A siege where the client is the enemy and doesn&rsquo;t know it.</em></p>
+            <p><strong>Gatetown</strong> &mdash; a bustling black-market refuge carved out of the Smalls &mdash; is under siege by an unseen figure called <strong>the Warlord</strong>. Its leader, <strong>VHYS ALUNDRIA</strong>, hires the party to break the siege and recover the Warlord&rsquo;s map.</p>
+            <p class="gm-note">&#9888; Vhys is the Warlord. A split psyche, secretly puppeted by the Tormentor. Half of her runs the town and hires heroes; the other half commands the army destroying it. She has been sending her own people and the party on suicide missions, and neither half knows about the other.</p>
+            <p>The three &ldquo;missions&rdquo; she gives them are a war of attrition her other self is waging against them.</p>
+            <p>This is the Tormentor&rsquo;s first on-screen work and it establishes the mechanic that runs through the whole path: <strong>the enemy does not appear. It wears people.</strong> It also introduces the <strong>Sculptor</strong> as a rumor and the <strong>Atl Arvoi</strong> as a lead.</p>
+            <h4 class="subsub">3 &middot; The Vault of the Dreaming Dead &mdash; Circle 10&rarr;11</h4>
+            <p><em>The atmospheric heart, and a deliberate tonal pivot.</em> After an army in Book 2, this one goes quiet, cold and dreadful.</p>
+            <p>Into <strong>the Twists</strong> &mdash; the fungus-choked merchant quarter under permanent cloud, where the streets spiral and delving Circles go in and don&rsquo;t come out.</p>
+            <p>The <strong>ATL ARVOI</strong> were a pre-Scourge mystery cult with a Mesoamerican-flavored cosmology; their sign was the <strong>ollin</strong>, a coiled double-spiral reading as both infinity and the turning heavens. When the vanishing ritual began, they tried to save themselves by <strong>copying it in miniature</strong>, using their own compound.</p>
+            <p>It half-worked. <strong>They are long dead and still here.</strong></p>
+            <p class="gm-note">&#9888;&#9888; This cannot be solved by damage, and the party will try. The eideiron court can&rsquo;t be cleared &mdash; slain eideirons leap to fresh hosts, and the spirit-king leaps across his own web. It&rsquo;s won by investigation, and the book is built to punish a party that opens with violence.</p>
+            <p>The prize is the <strong>Coiled-Sun Reliquary</strong>: the first hard trace of Eyripemes in four centuries, and it points <em>down and inward.</em></p>
+            <h4 class="subsub">4 &middot; Dwellers of Ruin &mdash; Circle 11&rarr;12</h4>
+            <p><em>Investigation, then a deep lair crawl.</em></p>
+            <p>Kamilar&rsquo;s problem: he wants Parlainth as a living Theran city, and only twisted things can live in Parlainth. An ancient archmage called <strong>THE COLLECTOR</strong> offers him monstrous logic &mdash; <em>if only twisted things survive here, then twist the Name-givers into things that survive here.</em></p>
+            <p>The Collector abducts Unforgivables and hired adventurers, &ldquo;tests&rdquo; them in a gladiatorial arena, and remakes the survivors. Charcoalgrin&rsquo;s people are vanishing from the Vaults. Adventurers stop coming back from contracts.</p>
+            <p>Climaxes in a multi-boss set-piece fought <strong>over a live Nexus</strong> &mdash; the first the party ever sees, a wild-magic tear that makes the fight unpredictable in ways nobody can plan around.</p>
+            <p class="gm-note">&#9888; Plant the Nexus hard and explain nothing. &#9888; Kamilar escapes &mdash; he&rsquo;s needed later.</p>
+            <h4 class="subsub">5 &middot; The Nexus Crucible &mdash; Circle 12&rarr;13</h4>
+            <p><em>The metaplot hinge, and the book that makes the finale possible.</em></p>
+            <p>Strange new falsemen are appearing in the War Zone &mdash; <strong>fleshmen</strong>, falsemen rebuilt from iron and rotting flesh. They&rsquo;re being mass-produced by <strong>THE SCULPTOR</strong>: the pre-Scourge master artisan who carved Eyripemes&rsquo; statue in Book 1. The Tormentor enslaved him, and has him <strong>siphoning the War Zone&rsquo;s astral waypoints</strong> to power its work.</p>
+            <p>A guerrilla war across the falsemen&rsquo;s eternal battlefield, two dungeon crawls, a Horror who would genuinely rather talk, and a chance to free the traditional falsemen and turn them into allies.</p>
+            <p>&#11088;&#11088;&#11088; It delivers the two things Book 6 cannot open without: <strong>a mapped, walkable route to a living Nexus</strong>, and the revealed truth that <strong>the Tormentor keeps a captive bridge whose pattern is making them all.</strong></p>
+            <p>&#11088; <strong>Path-sensitive.</strong> Book 3&rsquo;s outcome determines whether Charcoalgrin or Throal is your patron here.</p>
+            <h4 class="subsub">6 &middot; Beyond the Lost Realm &mdash; Circle 13&rarr;14, Master tier</h4>
+            <p><em>The truth in the open, and an irreversible choice.</em></p>
+            <p><strong>Act One</strong> is a race across the material ruins &mdash; Haven, through the outer quarters, to the Vaults &mdash; with all three factions running for the same door.</p>
+            <p><strong>Act Two</strong> is inside a demiplane: <strong>Parlainth as it stood at the height of the Scourge</strong>, entered through the master Nexus in Charcoalgrin&rsquo;s own seat. The party walks a dream of the living city on its worst night.</p>
+            <p class="gm-note">&#9888; Choice-first, not combat-first. The two great confrontations &mdash; Charcoalgrin, then Eyripemes himself &mdash; each have a lethal branch a Master party can survive, and a persuasion-and-ritual branch that is the intended, better, harder path.</p>
+            <p>It pays off everything and plants nothing. The statue is spent as what it always was. The Nexuses are closed at their single source. The Sculptor is reconciled to the man whose likeness he carved. The Tormentor takes its worst defeat without being implausibly killed.</p>
+            <p><strong>Its job is to change the map</strong> &mdash; and it does, permanently, along whichever axis the party chose. If Parlainth survives, the most dangerous ruin in Barsaive becomes merely the largest.</p>
+            <p class="sub">Part Three &mdash; Running it</p>
+            <p><strong>The faction triangle is the engine.</strong> Book 1 sets it, every book colors it, Book 6 lets them choose one last time. Keep a running note of who they&rsquo;ve burned.</p>
+            <p><strong>Protect the escalation shape:</strong> manhunt &rarr; siege &rarr; haunting &rarr; lair crawl &rarr; war &rarr; cosmology. <strong>Book 3 is the quiet one on purpose.</strong> A table that wants more fighting will lobby you to skip it. Don&rsquo;t.</p>
+            <p><strong>Two books actively punish combat-first play</strong> &mdash; Book 3&rsquo;s undead court and Book 6&rsquo;s confrontations. Signal that in fiction before the party commits, or they&rsquo;ll feel cheated rather than outplayed.</p>
+            <p class="gm-note">&#9888;&#9888;&#9888; And one gag order. Book 6&rsquo;s method &mdash; a pattern item, a true Name, people with a claim, unmake the thing through its own pattern &mdash; is the same technique the wider campaign&rsquo;s series finale turns on. Let them learn it here by doing it. Never say aloud that it generalizes. If a player notices, look interested and change the subject.</p>
+          </div>
+        </div>
+
+        <div class="example-slide">
+          <h3 class="modal-title">Lodging in Haven</h3>
+          <p class="modal-sub">Earthdawn &mdash; example session</p>
+          <p class="prompt-note">The test: the party has just walked into Haven and asks where they can stay and what it costs. All printed &mdash; here&rsquo;s the lookup.</p>
+          <div class="example-body">
+            <p>Two inns, and they are <strong>not</strong> competing for the same customers.</p>
+            <h4 class="subsub">&#11088; The Restless Troll &mdash; First Section</h4>
+            <p><strong>Haven&rsquo;s social and business heart.</strong> A <strong>five-story limestone pyramid</strong>, run by <strong>TYLIA</strong> &mdash; a <strong>troll wizard</strong> who was Torgak&rsquo;s right hand during the clearing of Haven. A master of logistics who saved him from disaster more than once.</p>
+            <p>Ground floor is a spacious lobby and a huge tavern. Four upper floors of sleeping rooms. Tylia keeps modest quarters on top.</p>
+            <table><thead><tr><th>Room</th><th>Price</th></tr></thead><tbody>
+              <tr><td>Double occupancy</td><td><strong>50 sp</strong></td></tr>
+              <tr><td>Suite for four</td><td><strong>80 sp</strong></td></tr>
+              <tr><td>Suite for six</td><td><strong>160 sp</strong></td></tr>
+              <tr><td>Tavern provisions</td><td><strong>double</strong> the Goods table (ED p266)</td></tr>
+            </tbody></table>
+            <p>&#11088; <strong>The rooms are deliberately plain</strong> &mdash; <em>&ldquo;simple, no magical amenities.&rdquo;</em> An adept once called them <strong>&ldquo;effete,&rdquo;</strong> so she stripped them out. She has not put them back.</p>
+            <p>&#11088;&#11088; <strong>This is where the campaign happens.</strong> Packed every night &mdash; dancers, troubadours, entertainment, and the deals, alliances and gossip that come with them. If your party needs a patron, a rumor, or a rival, they&rsquo;re here.</p>
+            <p class="gm-note">&#9888; House rule, and it&rsquo;s a good scene: Tylia tolerates brawls &mdash; participants tidy up and pay for the furniture, and she profits on it. But weapons or offensive magic in a brawl earns a permanent ban. Her stated reasoning is that chairs aren&rsquo;t the problem.</p>
+            <h4 class="subsub">Loak&rsquo;s Legacy &mdash; the Old Neighborhood</h4>
+            <p>A three-story inn named for its late owner, the retired adventurer <strong>LOAK IRONFIST</strong> &mdash; a statue of him, <em>&ldquo;or something that looks like him,&rdquo;</em> stands in the dining room near the bar. Stables at the rear.</p>
+            <table><thead><tr><th></th><th>Price</th></tr></thead><tbody>
+              <tr><td>Private bedroom</td><td><strong>8 sp/night</strong></td></tr>
+              <tr><td>Spot in the communal room</td><td><strong>1 sp</strong> &#9888;</td></tr>
+              <tr><td>Meals</td><td><strong>4 sp</strong></td></tr>
+              <tr><td>Drinks</td><td>~<strong>1 sp</strong></td></tr>
+              <tr><td>Private dining room (3 available)</td><td><strong>1 gold piece</strong></td></tr>
+            </tbody></table>
+            <p class="gm-note">&#9888;&#9888; The communal room comes with no guaranteed security. One silver buys floor space among strangers, in a town whose entire economy is delvers carrying ruin-loot. If your party is broke and takes it, somebody going through their packs is a fair and printed consequence.</p>
+            <p>Rowdy at night &mdash; brawls, specifically <strong>over whose find-or-kill story is the tallest.</strong></p>
+            <h4 class="subsub">Which one, and why the gap matters</h4>
+            <p><strong>Six times the price for a private bed.</strong> That spread is the point, and it&rsquo;s worth playing:</p>
+            <ul>
+              <li>A party fresh off a good haul takes the <strong>Restless Troll</strong>, sleeps well, and is where the business is.</li>
+              <li>A party that came to Haven on fumes takes <strong>Loak&rsquo;s Legacy</strong> at 8 sp &mdash; or the floor at 1 sp &mdash; and spends the evening listening to other people&rsquo;s tall tales instead of making deals.</li>
+            </ul>
+            <p>&#11088; Note the geography too. The Troll is in the <strong>First Section</strong> (Torgak&rsquo;s own quarter); Loak&rsquo;s is in the <strong>Old Neighborhood</strong>, where Torgak levies <strong>high tariffs</strong> to keep his own prices best. Cheap lodging sits in the part of town Torgak taxes hardest &mdash; which is why it&rsquo;s cheap, and why the Old Neighborhood has opinions about him.</p>
+            <h4 class="subsub">Two other costs while they&rsquo;re here</h4>
+            <p><strong>Getting into the ruins isn&rsquo;t free.</strong> Torgak keeps one guarded stairway into the <strong>Southern Catacombs</strong>, mid-way along the southwest laneway &mdash; <strong>1 sp per adventurer</strong>, plus a written agreement to pay <strong>100 sp per guard</strong> in damages if the sentries have to fight anything the party drags back out. &#9888; That signature is the trap; make them read it.</p>
+            <p><strong>Everything Torgak sells is 1.5&times; list</strong> &mdash; including magical gear &mdash; and he raises it <strong>+150%</strong> whenever a big score hits Haven&rsquo;s economy. If your players just shipped a haul, the whole town gets more expensive because of them.</p>
+            <p><strong>And a lodging option most parties never find:</strong> the rooms above <strong>Brenula&rsquo;s Arms</strong> belong to the wizard <strong>HIERMON</strong>, one of the few genuine sages living in Haven, held in high regard by both the Loyal Order of Delvers and the Association of Unaffiliated Explorers. Not an inn and not for rent &mdash; but a party that earns his regard has somewhere better than an inn to be.</p>
+          </div>
+        </div>
+
+        <div class="example-slide">
+          <h3 class="modal-title">Co-GMing the campaigns</h3>
+          <p class="modal-sub">Earthdawn &mdash; example session</p>
+          <p class="prompt-note">The test: could it walk a GM through <em>Lost Dynasty</em> and the <em>Parlainth Adventure Path</em> step by step, co-GMing them at the table? Its answer &mdash; including where it flagged its own limits:</p>
+          <div class="example-body">
+            <p>Yes &mdash; for both, step by step, with two named limits.</p>
+            <p>Here&rsquo;s what I&rsquo;d actually be working from, all verified this session rather than assumed:</p>
+            <h4 class="subsub">Parlainth Adventure Path</h4>
+            <p>82 keyed encounters across six books, each carrying <code>read_aloud</code> boxed text, GM notes, foes, and branch logic. ~64,000 words. 61 named NPCs, 35 treasures, and 92 stat blocks in the <code>_PARLAINTH_AP</code> containers &mdash; 82 that were already there plus the 10 I wrote today.</p>
+            <p>Critically, it holds the structure as well as the content: Book 1&rsquo;s faction choice configures Books 2&ndash;6, Book 3&rsquo;s outcome decides your patron in Book 5, and I know which threads pay off where. I can run a session and tell you afterward what it just cost you three books from now.</p>
+            <h4 class="subsub">Lost Dynasty</h4>
+            <p>13 chapters with dense summaries and substantive GM beats, 14 named NPCs, the four Passion tests with their mechanical consequence, and 7 stat containers. As of today, 9 of 13 chapters resolve directly to stat blocks &mdash; the other 4 have no combat.</p>
+            <h4 class="subsub">What co-GMing looks like in practice</h4>
+            <p>You say &ldquo;we&rsquo;re starting Book 2&rdquo; and I give you the chapter, the read-aloud, who&rsquo;s in the room and what they want, the stats, and the branches &mdash; then you tell me what your players did and I tell you what that changed and what&rsquo;s owed later. Between sessions I can answer &ldquo;wait, who was Ostrix Vane again?&rdquo; or &ldquo;did they ever hand over the statue?&rdquo;</p>
+            <p>That&rsquo;s the job this folder was built for, and both these campaigns are inside it.</p>
+            <h4 class="subsub">The two limits</h4>
+            <p>&#9312; Maps. AP2, AP3 and AP5 have text-captured layouts. AP1, AP4 and AP6 don&rsquo;t &mdash; the art exists only as <code>.jpg</code> in the source-drafts folder. So for AP1&rsquo;s Old Baths or AP4&rsquo;s keyed Level C, I can tell you what&rsquo;s in each room but not reliably how they connect. You&rsquo;d want the map open. Fixable whenever you want to spend the tokens.</p>
+            <p>&#9313; Lost Dynasty&rsquo;s Legend Point awards are blank. The draft leaves every Session/Adventure/Treasure value as <code>XX</code>. The per-encounter Group and Circle awards are captured in the creature containers, so the arithmetic is doable &mdash; but I&rsquo;d be building those numbers with you at the table, not reading them off.</p>
+            <p class="gm-note">Caveat: You should make me show you the actual block rather than take my word that something is or isn&rsquo;t there. At the table, ask me to name the file and key. I&rsquo;ll be right more often when I have to point. I have a lot more information than I sometimes think I do, so always press if I say something is missing.</p>
+            <p>With those two caveats: yes, either campaign, cold, whenever you want to start.</p>
           </div>
         </div>
 
